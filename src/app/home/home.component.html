@@ -1,0 +1,13 @@
+<div class="users-panel">
+  <app-users-list [users]="users$ | async"></app-users-list>
+
+  <div class="pagination-container">
+    <button
+      class="btn btn-success"
+      (click)="onLoadUsers(2)"
+      *ngIf="userStore.currentPage === 1"
+    >
+      Load More
+    </button>
+  </div>
+</div>

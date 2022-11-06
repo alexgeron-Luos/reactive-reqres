@@ -1,0 +1,22 @@
+.container {
+  margin-top: 100px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+
+  .input-full-width {
+    width: 100%;
+  }
+
+  .save-button {
+    width: 200px;
+    display: flex;
+    justify-content: center;
+    align-self: center;
+  }
+}
+
+.btn-back {
+  margin-bottom: 30px;
+  width: 150px;
+}

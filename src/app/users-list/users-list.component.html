@@ -1,0 +1,33 @@
+<ng-container *ngIf="!activeUser; else detail">
+  <h1 class="title">Users List</h1>
+  <button mat-raised-button color="primary" routerLink="add">
+    <mat-icon>add</mat-icon>Add one user
+  </button>
+  <div class="container">
+    <mat-list>
+      <mat-list-item *ngFor="let user of users">
+        <img src="{{ user.avatar }}" matListAvatar />
+        <div matLine>{{ user.email }}</div>
+        <button class="btn" mat-icon-button (click)="openUserDetail(user)">
+          <mat-icon>search</mat-icon>
+        </button>
+        <button class="btn" mat-icon-button (click)="onDeleteUser(user)">
+          <mat-icon>delete</mat-icon>
+        </button>
+      </mat-list-item>
+    </mat-list>
+  </div>
+</ng-container>
+<ng-template #detail>
+  <h1 class="title">User detail</h1>
+  <button
+    mat-raised-button
+    color="accent"
+    class="btn-back"
+    (click)="onBackToSearch()"
+  >
+    Back to Search
+  </button>
+
+  <app-user [user]="activeUser"></app-user>
+</ng-template>
